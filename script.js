@@ -53,7 +53,11 @@ function randNum() {
 
 let colorValue = colorInput.value;
 colorInput.addEventListener("input", function () {
-  colorValue = colorInput.value;
+  if (rainbowMode) {
+    rainbowMode = false;
+    rainbowBtn.classList.toggle("rainbow-mode");
+    colorValue = colorInput.value;
+  } else colorValue = colorInput.value;
 });
 
 gridInput.addEventListener("input", changeGridSize);
